@@ -7,6 +7,8 @@ import { routeTree } from './routeTree.gen.ts'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClient } from './shared/lib/queryClient.ts'
 
+import './shared/lib/firebase'
+
 import './index.css'
 
 const router = createRouter({ routeTree })
