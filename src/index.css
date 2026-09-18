@@ -1,7 +1,20 @@
 @import "tailwindcss";
-
 @import "@fontsource/poppins/400.css";
 
 body {
     font-family: 'Poppins', sans-serif;
+}
+
+@theme {
+    --color-primary: #16A34A;
+    --color-primary-hover: #128740;
+    --color-primary-tint: #E7F6EC;
+    --color-border: #E3E8E5;
+    --color-border-strong: #CBD5D1;
+    --color-text: #0F172A;
+    --color-text-muted: #64748B;
+    --color-text-faint: #94A3B8;
+    --color-danger: #DC2626;
+
+    --radius-card: 1.25rem;
 }
