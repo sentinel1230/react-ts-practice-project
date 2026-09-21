@@ -27,6 +27,12 @@ export type InsuranceInfo = {
     insuranceProvider: string
 }
 
+export type Appointment = {
+    startTime: string,
+    speciality: string,
+    status: 'canceled' | 'confirmed',
+}
+
 export type ContactChannel = 'email' | 'mobilePhone' | 'mail'
 export type ContactPreferences = Record<ContactChannel, boolean>
 

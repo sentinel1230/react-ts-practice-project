@@ -1,0 +1,1 @@
+export { EditContactInfoForm } from './EditContactInfoForm'
