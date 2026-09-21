@@ -1,11 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
-import { useCurrentUser } from '../../../entities/user/useCurrentUser'
-import { useUserProfile } from '../../../entities/user/useUserProfile'
+import { useCurrentUser } from '../../../entities/user/model/useCurrentUser'
+import { useUserProfile } from '../../../entities/user/model/useUserProfile'
 import { ProfileGrid } from './-components/ProfileGrid'
 import { Modal } from '../../../shared/ui/Modal'
 import { EditContactInfoForm } from '../../../features/profile-edit-contact-info'
-import { useLogout } from '../../../entities/user/useLogout'
+import { useLogout } from '../../../entities/user/model/useLogout'
 
 type EditableSection = 'contactInfo' | 'personalInfo' | 'insuranceInfo' | null
 

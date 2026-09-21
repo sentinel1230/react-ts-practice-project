@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { useUpdateContactInfo } from './useUpdateContactInfo'
-import { Input } from '../../shared/ui/Input'
-import { SubmitButton } from '../../shared/ui/Button'
-import type { ContactInfo } from '../../entities/user/types'
+import { useUpdateContactInfo } from '../model/useUpdateContactInfo'
+import { Input } from '../../../shared/ui/Input'
+import { SubmitButton } from '../../../shared/ui/Button'
+import type { ContactInfo } from '../../../entities/user'
 
 type Props = {
     uid: string

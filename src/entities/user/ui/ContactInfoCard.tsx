@@ -1,5 +1,5 @@
 import { Pencil } from 'lucide-react'
-import type { ContactInfo } from '../types'
+import type { ContactInfo } from '../model/types'
 
 type Props = {
   data: ContactInfo | undefined

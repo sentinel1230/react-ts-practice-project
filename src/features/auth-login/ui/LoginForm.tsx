@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { useLogin } from './useLogin'
-import { getFirebaseErrorMessage } from '../../shared/lib/firebase-errors'
-import { Input } from '../../shared/ui/Input'
-import { SubmitButton } from '../../shared/ui/Button'
+import { useLogin } from '../model/useLogin'
+import { getFirebaseErrorMessage } from '../../../shared/lib/firebase-errors'
+import { Input } from '../../../shared/ui/Input'
+import { SubmitButton } from '../../../shared/ui/Button'
 
 export function LoginForm() {
     const [email, setEmail] = useState('')

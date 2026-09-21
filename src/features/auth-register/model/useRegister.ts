@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query"
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
-import { auth, db } from "../../shared/lib/firebase"
+import { auth, db } from "../../../shared/lib/firebase"
 import { setDoc, doc } from "firebase/firestore"
 import { useNavigate } from '@tanstack/react-router'
 import { type RegisterInput } from './schema'

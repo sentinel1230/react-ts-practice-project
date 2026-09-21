@@ -1,5 +1,5 @@
 import { ContactInfoCard } from '../../../../entities/user/ui/ContactInfoCard'
-import type { UserProfile } from '../../../../entities/user/types'
+import type { UserProfile } from '../../../../entities/user/model/types'
 
 type EditableSection = 'contactInfo' | 'personalInfo' | 'insuranceInfo'
 

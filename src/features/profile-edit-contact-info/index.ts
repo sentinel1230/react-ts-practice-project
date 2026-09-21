@@ -1,1 +1,1 @@
-export { EditContactInfoForm } from './EditContactInfoForm'
+export { EditContactInfoForm } from './ui/EditContactInfoForm'

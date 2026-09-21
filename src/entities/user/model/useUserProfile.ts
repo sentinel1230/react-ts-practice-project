@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { getDoc, doc } from 'firebase/firestore'
-import { db } from '../../shared/lib/firebase'
-import { type UserProfile } from './types'
+import { db } from '../../../shared/lib/firebase'
+import { type UserProfile } from '../model/types'
 
 export function useUserProfile(uid: string | undefined) {
     return useQuery({

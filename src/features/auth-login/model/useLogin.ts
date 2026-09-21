@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query'
 import { signInWithEmailAndPassword } from 'firebase/auth'
-import { auth } from '../../shared/lib/firebase'
+import { auth } from '../../../shared/lib/firebase'
 import { useNavigate } from '@tanstack/react-router'
 
 type LoginInput = {

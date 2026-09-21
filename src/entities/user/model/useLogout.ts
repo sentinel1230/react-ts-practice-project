@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { signOut } from 'firebase/auth'
 import { useNavigate } from '@tanstack/react-router'
-import { auth } from '../../shared/lib/firebase'
+import { auth } from '../../../shared/lib/firebase'
 
 export function useLogout() {
   const navigate = useNavigate()

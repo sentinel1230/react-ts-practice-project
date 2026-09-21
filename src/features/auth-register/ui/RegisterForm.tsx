@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { useRegister } from './useRegister'
-import { getFirebaseErrorMessage } from '../../shared/lib/firebase-errors'
-import { getFieldErrors } from '../../shared/lib/zod-errors'
-import { Input } from '../../shared/ui/Input'
-import { SubmitButton } from '../../shared/ui/Button'
-import { registerSchema } from './schema'
+import { useRegister } from '../model/useRegister'
+import { getFirebaseErrorMessage } from '../../../shared/lib/firebase-errors'
+import { getFieldErrors } from '../../../shared/lib/zod-errors'
+import { Input } from '../../../shared/ui/Input'
+import { SubmitButton } from '../../../shared/ui/Button'
+import { registerSchema } from '../model/schema'
 
 type FieldErrors = Partial<Record<'email' | 'password' | 'firstName' | 'lastName', string>>
 
