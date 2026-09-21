@@ -1,4 +1,3 @@
-// src/features/auth-login/LoginForm.tsx
 import { useState } from 'react'
 import { useLogin } from './useLogin'
 import { getFirebaseErrorMessage } from '../../shared/lib/firebase-errors'
@@ -17,7 +16,7 @@ export function LoginForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} noValidate>
             <Input
                 label="Email"
                 type="email"
@@ -26,7 +25,7 @@ export function LoginForm() {
                 autoComplete="email"
             />
             <Input
-                label="Пароль"
+                label="Password"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}

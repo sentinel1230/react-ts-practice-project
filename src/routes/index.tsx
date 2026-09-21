@@ -8,7 +8,7 @@ function RouteComponent() {
   return(
     <div>
         <span>/ page</span>
-        <Link to="/auth">Go to /auth/</Link> 
+        <Link to="/auth" search={{ mode: "login" }}>Go to /auth/</Link> 
     </div>
   )
 }

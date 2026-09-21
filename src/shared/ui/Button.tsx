@@ -1,4 +1,3 @@
-// src/shared/ui/Button.tsx
 import { type ButtonHTMLAttributes } from 'react'
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement>
@@ -10,6 +9,7 @@ export function SubmitButton({ className, ...rest }: Props) {
         w-full rounded-lg bg-primary py-3 text-[0.90625rem] font-semibold text-white
         transition-colors hover:bg-primary-hover active:translate-y-px
         focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2
+        cursor-pointer
       "
             {...rest}
         />

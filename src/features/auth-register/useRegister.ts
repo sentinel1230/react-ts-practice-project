@@ -3,13 +3,13 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
 import { auth, db } from "../../shared/lib/firebase"
 import { setDoc, doc } from "firebase/firestore"
 import { useNavigate } from '@tanstack/react-router'
-import { type RegisterFormInput } from "../../entities/user/types"
+import { type RegisterInput } from './schema'
 
 export function useRegister() {
     const navigate = useNavigate()
 
     return useMutation({
-        mutationFn: async ({ email, password, firstName, lastName }: RegisterFormInput) => {
+        mutationFn: async ({ email, password, firstName, lastName }: RegisterInput) => {
             const credential = await createUserWithEmailAndPassword(auth, email, password)
             const user = credential.user
             await updateProfile(user, {
@@ -25,11 +25,10 @@ export function useRegister() {
             return user
         },
         onSuccess: () => {
-            console.log('7. onSuccess сработал, переходим на /profile')
             navigate({ to: '/profile' })
         },
         onError: (err) => {
-        console.error('❌ onError сработал:', err)
+            console.error('Registration error:', err)
         },
     })
 }
