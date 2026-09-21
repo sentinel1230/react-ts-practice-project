@@ -1,21 +1,20 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, redirect } from '@tanstack/react-router'
+import { AuthLayout } from './-components/AuthLayout'
+import { auth } from '../../shared/lib/firebase'
+import { waitForAuthInit } from '../../shared/lib/auth-ready'
+import { z } from 'zod'
 
-import { LoginForm } from '../../features/auth-login'
-import { RegisterForm } from '../../features/auth-register'
-import { useState } from 'react'
-
-export const Route = createFileRoute('/auth/')({
-  component: RouteComponent,
+const authSearchSchema = z.object({
+  mode: z.enum(['login', 'register']).catch('login'),
 })
 
-function RouteComponent() {
-  const [isLogin, setIsLogin] = useState(true)
-
-  return (
-    <div>
-      <span>Auth Page</span>
-      <div onClick={() => setIsLogin(!isLogin)}>Switch to {isLogin ? 'Register' : 'Login'}</div>
-      {isLogin ? <LoginForm /> : <RegisterForm />}
-    </div>
-  )
-}
+export const Route = createFileRoute('/auth/')({
+  beforeLoad: async () => {
+    await waitForAuthInit()
+    if (auth.currentUser) {
+      throw redirect({ to: '/profile' })
+    }
+  },
+  component: AuthLayout,
+  validateSearch: authSearchSchema,
+})

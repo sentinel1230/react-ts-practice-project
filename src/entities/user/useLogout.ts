@@ -11,7 +11,7 @@ export function useLogout() {
     mutationFn: () => signOut(auth),
     onSuccess: () => {
       queryClient.clear()
-      navigate({ to: '/auth' })
+      navigate({ to: '/auth', search: { mode: 'login' } })
     },
   })
 }
