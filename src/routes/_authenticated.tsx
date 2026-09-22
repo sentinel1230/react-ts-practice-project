@@ -1,6 +1,7 @@
 import { createFileRoute, Outlet, redirect } from '@tanstack/react-router'
 import { auth } from '../shared/lib/firebase'
 import { waitForAuthInit } from '../shared/lib/auth-ready'
+import { Navbar } from '../widgets'
 
 export const Route = createFileRoute('/_authenticated')({
     beforeLoad: async () => {
@@ -9,5 +10,19 @@ export const Route = createFileRoute('/_authenticated')({
             throw redirect({ to: '/auth', search: { mode: 'login' } })
         }
     },
-  component: () => <Outlet />,
+    component: () => {
+        return (
+            <>
+                <Navbar />
+                <div className="min-h-screen bg-background px-4 py-6 sm:px-6 sm:py-8">
+                    <div className="mx-auto w-full sm:w-[80%] sm:min-w-[640px]">
+                        <div className="rounded-lg border-none bg-white p-5 shadow-card sm:p-6">
+                            <Outlet />
+                        </div>
+                    </div>
+                </div>
+            </>
+        )
+    }
+
 })

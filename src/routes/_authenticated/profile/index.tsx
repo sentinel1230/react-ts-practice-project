@@ -5,7 +5,6 @@ import { useUserProfile } from '../../../entities/user/model/useUserProfile'
 import { ProfileGrid } from './-components/ProfileGrid'
 import { Modal } from '../../../shared/ui/Modal'
 import { EditContactInfoForm } from '../../../features/profile-edit-contact-info'
-import { useLogout } from '../../../entities/user/model/useLogout'
 
 type EditableSection = 'contactInfo' | 'personalInfo' | 'insuranceInfo' | null
 
@@ -17,7 +16,6 @@ function RouteComponent() {
   const { user, isLoading: authLoading } = useCurrentUser()
   const { data: profile, isLoading: profileLoading } = useUserProfile(user?.uid)
   const [editingSection, setEditingSection] = useState<EditableSection>(null)
-  const { mutate: logout, isPending: isLoggingOut } = useLogout()
 
   if (authLoading || profileLoading) return <div>Loading...</div>
   if (!user || !profile) return <div>You are not authorized</div>
@@ -38,10 +36,6 @@ function RouteComponent() {
           onSuccess={() => setEditingSection(null)}
         />
       </Modal>
-
-      <button onClick={() => logout()} className="mt-4 px-4 py-2 bg-red-500 text-white rounded">
-        {isLoggingOut ? 'Logging out...' : 'Logout'}
-      </button>
     </div>
   )
 }
