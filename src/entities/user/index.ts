@@ -11,5 +11,7 @@ export type {
 export { useCurrentUser } from './model/useCurrentUser'
 export { useUserProfile } from './model/useUserProfile'
 export { useLogout } from './model/useLogout'
+export { useUsersList } from './model/useUsersList'
 
 export { ContactInfoCard } from './ui/ContactInfoCard'
+export { UsersTable } from './ui/UsersTable'

@@ -29,7 +29,7 @@ export function AuthLayout() {
           bg-white px-5 pb-7 pt-8
           sm:min-h-0 sm:max-w-md sm:justify-start sm:rounded-card
           sm:border sm:border-border sm:px-9 sm:pb-8 sm:pt-10
-          sm:shadow-[0_1px_2px_rgba(15,23,42,0.04),0_12px_32px_-12px_rgba(15,23,42,0.12)]
+          sm:shadow-card
           sm:my-6
         "
             >

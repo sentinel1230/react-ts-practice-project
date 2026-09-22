@@ -6,15 +6,17 @@ body {
 }
 
 @theme {
+    --color-background: #FAFAFB;
     --color-primary: #16A34A;
     --color-primary-hover: #128740;
     --color-primary-tint: #E7F6EC;
     --color-border: #E3E8E5;
     --color-border-strong: #CBD5D1;
-    --color-text: #0F172A;
+    --color-text: #242424;
     --color-text-muted: #64748B;
-    --color-text-faint: #94A3B8;
+    --color-text-faint: #92929D;
     --color-danger: #DC2626;
 
     --radius-card: 1.25rem;
+    --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 12px 32px -12px rgba(15, 23, 42, 0.12)
 }
