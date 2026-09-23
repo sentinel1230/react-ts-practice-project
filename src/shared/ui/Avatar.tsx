@@ -13,15 +13,20 @@ function getColorForName(name: string) {
 }
 
 type Props = {
-    firstName: string
-    lastName: string
-    size?: 'sm' | 'md'
+    firstName: string,
+    lastName: string,
+    size?: 'sm' | 'md' | 'lg',
 }
 
 export function Avatar({ firstName, lastName, size = 'md' }: Props) {
     const initials = `${firstName[0] ?? ''}${lastName[0] ?? ''}`.toUpperCase()
     const colorClasses = getColorForName(firstName + lastName)
-    const sizeClasses = size === 'sm' ? 'h-8 w-8 text-xs' : 'h-10 w-10 text-sm'
+
+    const sizeClasses = {
+        sm: 'h-8 w-8 text-xs',
+        md: 'h-10 w-10 text-sm',
+        lg: 'h-20 w-20 text-lg',
+    }[size]
 
     return (
         <div

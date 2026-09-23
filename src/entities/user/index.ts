@@ -4,6 +4,7 @@ export type {
     PersonalInfo,
     InsuranceInfo,
     Appointment,
+    ContactChannel,
     ContactPreferences,
     UserProfile,
 } from './model/types'
@@ -16,4 +17,5 @@ export { useUsersList } from './model/useUsersList'
 export { ContactInfoCard } from './ui/ContactInfoCard'
 export { PersonalInfoCard } from './ui/PersonalInfoCard'
 export { InsuranceInfoCard } from './ui/InsuranceInfoCard'
+export { AppointmentCard } from './ui/AppointmentCard'
 export { UsersTable } from './ui/UsersTable'

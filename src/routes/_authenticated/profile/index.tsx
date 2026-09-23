@@ -8,6 +8,9 @@ import { Modal } from '../../../shared/ui/Modal'
 import { EditContactInfoForm } from '../../../features/profile-edit-contact-info'
 import { EditPersonalInfoForm } from '../../../features/profile-edit-contact-info'
 import { EditInsuranceInfoForm } from '../../../features/profile-edit-contact-info'
+import { AddAppointmentForm } from '../../../features/profile-add-appointment'
+
+import { Avatar } from '../../../shared/ui/Avatar'
 
 type EditableSection = 'contactInfo' | 'personalInfo' | 'insuranceInfo' | null
 
@@ -19,14 +22,31 @@ function RouteComponent() {
   const { user, isLoading: authLoading } = useCurrentUser()
   const { data: profile, isLoading: profileLoading } = useUserProfile(user?.uid)
   const [editingSection, setEditingSection] = useState<EditableSection>(null)
+  const [isAddingAppointment, setIsAddingAppointment] = useState(false)
 
   if (authLoading || profileLoading) return <div>Loading...</div>
   if (!user || !profile) return <div>You are not authorized</div>
 
   return (
     <div>
-      <h1>Profile</h1>
-      <ProfileGrid profile={profile} onEdit={setEditingSection} />
+      <div className="mb-6 flex items-center gap-4">
+        <Avatar firstName={profile.firstName} lastName={profile.lastName} size='lg' />
+        <div>
+          <h1 className="text-lg font-bold text-text">
+            {profile.firstName} {profile.lastName}
+          </h1>
+          <p className="text-sm text-text-faint">Patient</p>
+        </div>
+      </div>
+      <div className="border-b border-gray-200 px-5 sm:px-6 mb-8">
+        <nav className="-mb-px flex space-x-8" aria-label="Tabs">
+          <span className="px-1 py-4 text-lg">
+            Summary
+          </span>
+        </nav>
+      </div>
+
+      <ProfileGrid profile={profile} onEdit={setEditingSection} onAddAppointment={() => setIsAddingAppointment(true)} />
 
       <Modal
         isOpen={editingSection === 'contactInfo'}
@@ -62,6 +82,14 @@ function RouteComponent() {
           initialData={profile.insuranceInfo}
           onSuccess={() => setEditingSection(null)}
         />
+      </Modal>
+
+      <Modal
+        isOpen={isAddingAppointment}
+        onClose={() => setIsAddingAppointment(false)}
+        title="Add appointment"
+      >
+        <AddAppointmentForm uid={user.uid} onSuccess={() => setIsAddingAppointment(false)} />
       </Modal>
     </div>
   )

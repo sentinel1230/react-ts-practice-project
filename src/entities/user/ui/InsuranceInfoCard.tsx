@@ -12,7 +12,7 @@ export function InsuranceInfoCard({ data, onEdit }: Props) {
         <div className="rounded-lg border border-border bg-white p-5">
             <div className="mb-4 flex items-center justify-between">
                 <h3 className="font-semibold text-text">Insurance Info</h3>
-                <button onClick={onEdit} aria-label="Edit" className="text-text-faint hover:text-text">
+                <button onClick={onEdit} aria-label="Edit" className="text-text-faint hover:text-text cursor-pointer">
                     <Pencil size={16} />
                 </button>
             </div>

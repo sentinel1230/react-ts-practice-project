@@ -9,9 +9,9 @@ export function useUserProfile(uid: string | undefined) {
         queryFn: async () => {
             const snapshot = await getDoc(doc(db, 'users', uid!))
             if (!snapshot.exists()) {
-                throw new Error('User profile not found')
+                throw new Error('Профиль не найден')
             }
-            return snapshot.data() as UserProfile
+            return { uid: snapshot.id, ...snapshot.data() } as UserProfile
         },
         enabled: !!uid,
     })

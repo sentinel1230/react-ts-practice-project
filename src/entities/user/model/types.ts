@@ -45,6 +45,7 @@ export type UserProfile = {
     contactInfo?: ContactInfo,
     personalInfo?: PersonalInfo,
     insuranceInfo?: InsuranceInfo,
-    appointments?: Appointment,
+    appointments?: Appointment[],
+    contactChannel?: ContactChannel,
     contactPreferences?: ContactPreferences,
 }
