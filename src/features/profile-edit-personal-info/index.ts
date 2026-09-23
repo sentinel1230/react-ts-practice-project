@@ -1,0 +1,1 @@
+export { EditPersonalInfoForm } from './ui/EditPersonalInfoForm'

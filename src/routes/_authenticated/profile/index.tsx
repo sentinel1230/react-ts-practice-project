@@ -6,8 +6,8 @@ import { ProfileGrid } from './-components/ProfileGrid'
 import { Modal } from '../../../shared/ui/Modal'
 
 import { EditContactInfoForm } from '../../../features/profile-edit-contact-info'
-import { EditPersonalInfoForm } from '../../../features/profile-edit-contact-info'
-import { EditInsuranceInfoForm } from '../../../features/profile-edit-contact-info'
+import { EditPersonalInfoForm } from '../../../features/profile-edit-personal-info'
+import { EditInsuranceInfoForm } from '../../../features/profile-edit-insurance-info'
 import { AddAppointmentForm } from '../../../features/profile-add-appointment'
 
 import { Avatar } from '../../../shared/ui/Avatar'
