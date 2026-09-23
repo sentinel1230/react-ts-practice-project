@@ -12,8 +12,8 @@ export function Navbar() {
                 <div className="flex items-center gap-3">
                     <button
                         onClick={() => setIsMenuOpen(true)}
-                        className="text-text-muted hover:text-text"
-                        aria-label="Открыть меню"
+                        className="text-text-muted hover:text-text cursor-pointer"
+                        aria-label="Open menu"
                     >
                         <Menu size={22} />
                     </button>

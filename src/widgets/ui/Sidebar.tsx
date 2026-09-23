@@ -59,7 +59,7 @@ export function Sidebar({ isOpen, onClose }: Props) {
                     <button
                         onClick={() => logout()}
                         disabled={isLoggingOut}
-                        className="flex w-full items-center gap-3 rounded-md px-3 py-2.5 text-left text-sm font-medium text-danger hover:bg-red-50 disabled:opacity-60"
+                        className="flex w-full items-center gap-3 rounded-md px-3 py-2.5 text-left text-sm font-medium text-danger cursor-pointer hover:bg-red-50 disabled:opacity-60"
                     >
                         <LogOut size={18} />
                         {isLoggingOut ? 'Logging out...' : 'Logout'}
