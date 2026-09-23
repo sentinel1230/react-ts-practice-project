@@ -4,7 +4,10 @@ import { useCurrentUser } from '../../../entities/user/model/useCurrentUser'
 import { useUserProfile } from '../../../entities/user/model/useUserProfile'
 import { ProfileGrid } from './-components/ProfileGrid'
 import { Modal } from '../../../shared/ui/Modal'
+
 import { EditContactInfoForm } from '../../../features/profile-edit-contact-info'
+import { EditPersonalInfoForm } from '../../../features/profile-edit-contact-info'
+import { EditInsuranceInfoForm } from '../../../features/profile-edit-contact-info'
 
 type EditableSection = 'contactInfo' | 'personalInfo' | 'insuranceInfo' | null
 
@@ -33,6 +36,30 @@ function RouteComponent() {
         <EditContactInfoForm
           uid={user.uid}
           initialData={profile.contactInfo}
+          onSuccess={() => setEditingSection(null)}
+        />
+      </Modal>
+
+      <Modal
+        isOpen={editingSection === 'personalInfo'}
+        onClose={() => setEditingSection(null)}
+        title="Edit personal info"
+      >
+        <EditPersonalInfoForm
+          uid={user.uid}
+          initialData={profile.personalInfo}
+          onSuccess={() => setEditingSection(null)}
+        />
+      </Modal>
+
+      <Modal
+        isOpen={editingSection === 'insuranceInfo'}
+        onClose={() => setEditingSection(null)}
+        title="Edit insurance info"
+      >
+        <EditInsuranceInfoForm
+          uid={user.uid}
+          initialData={profile.insuranceInfo}
           onSuccess={() => setEditingSection(null)}
         />
       </Modal>

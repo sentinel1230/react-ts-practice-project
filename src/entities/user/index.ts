@@ -14,4 +14,6 @@ export { useLogout } from './model/useLogout'
 export { useUsersList } from './model/useUsersList'
 
 export { ContactInfoCard } from './ui/ContactInfoCard'
+export { PersonalInfoCard } from './ui/PersonalInfoCard'
+export { InsuranceInfoCard } from './ui/InsuranceInfoCard'
 export { UsersTable } from './ui/UsersTable'

@@ -37,13 +37,14 @@ export type ContactChannel = 'email' | 'mobilePhone' | 'mail'
 export type ContactPreferences = Record<ContactChannel, boolean>
 
 export type UserProfile = {
-    uid: string
-    email: string
-    firstName: string
-    lastName: string
-    createdAt: string
-    contactInfo?: ContactInfo
-    personalInfo?: PersonalInfo
-    insuranceInfo?: InsuranceInfo
-    contactPreferences?: ContactPreferences
+    uid: string,
+    email: string,
+    firstName: string,
+    lastName: string,
+    createdAt: string,
+    contactInfo?: ContactInfo,
+    personalInfo?: PersonalInfo,
+    insuranceInfo?: InsuranceInfo,
+    appointments?: Appointment,
+    contactPreferences?: ContactPreferences,
 }

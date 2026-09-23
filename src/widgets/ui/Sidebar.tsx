@@ -31,7 +31,7 @@ export function Sidebar({ isOpen, onClose }: Props) {
             >
                 <div className="flex h-14 items-center justify-between border-b border-border px-4">
                     <span className="text-base font-bold tracking-tight text-text">Menu</span>
-                    <button onClick={onClose} className="text-text-muted hover:text-text" aria-label="Close menu">
+                    <button onClick={onClose} className="text-text-muted cursor-pointer hover:text-text" aria-label="Close menu">
                         <X size={20} />
                     </button>
                 </div>
