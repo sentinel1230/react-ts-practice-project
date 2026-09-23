@@ -121,10 +121,4 @@ npx steiger ./src	Check FSD architecture rules
 
 Deployment
 
-Add your deployment link(s) here once available, e.g.:
-
-Live demo: https://your-app.vercel.app
-Hosting: Vercel / Netlify / Firebase Hosting
-License
-
-Add a license if applicable (e.g. MIT).
+Live demo: react-ts-practice-project-hleb3.vercel.app
