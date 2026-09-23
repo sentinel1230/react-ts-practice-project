@@ -6,13 +6,6 @@ export type ContactInfo = {
     address: string
 }
 
-export type RegisterFormInput = {
-    email: string
-    password: string
-    firstName: string
-    lastName: string
-}
-
 export type PersonalInfo = {
     gender: 'male' | 'female'
     birthDate: string

@@ -1,6 +1,5 @@
 export type {
     ContactInfo,
-    RegisterFormInput,
     PersonalInfo,
     InsuranceInfo,
     Appointment,
