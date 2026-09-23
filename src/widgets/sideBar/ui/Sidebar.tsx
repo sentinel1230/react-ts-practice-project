@@ -1,6 +1,6 @@
 import { Link, useMatchRoute } from '@tanstack/react-router'
 import { X, User, Users, LogOut } from 'lucide-react'
-import { useLogout } from '../../entities/user'
+import { useLogout } from '../../../entities/user'
 
 type Props = {
     isOpen: boolean
